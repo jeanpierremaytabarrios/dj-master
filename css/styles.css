@@ -130,12 +130,15 @@ body{margin: 0px;padding: 0px;width: 100vw;height: 100vh;}
 
 /*Song section derecha*/
 .song-section{width: 40%;height: 100%;background-color: rgba(5,92,21,0.35);}
-#call-search{width: 35em;height: 3em;border-radius: 3em;border: solid 4px;}
+#call-search{width: 80%;height: 40%;border-radius: 3em;border: solid 4px;}
 
 .list-search{width: 100%;height: 15%;display: flex;flex-direction: row;justify-content: center;align-items: center;}
 .song-list{width: 100%;height: 85%;overflow-y: scroll;}
 
 #call-search:focus{border-color: red;}
+.call-div{width: 75%;height: 100%;display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.searching{width: 25%;height: 100%;display: flex;flex-direction: row;justify-content: center;align-items: center;}
+#search-btn{border-radius: 15%;width: 60%;height: 30%;background-color: white;}
 
 
 .list-item

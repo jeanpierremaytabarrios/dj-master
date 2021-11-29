@@ -13,6 +13,7 @@ let song_list = document.querySelector(".song-list");
 let call_search = document.getElementById("call-search");
 let music_audio = document.getElementById("music-audio");
 let cons_image = document.querySelector(".cons-image");
+let search_btn = document.getElementById("search-btn");
 let playing_is = false;
 let aux = 0;
 
@@ -110,6 +111,15 @@ prev_btn.addEventListener("click",()=>{
     {
         aux--;
         paste_song(canciones[aux]);
+        if(playing_is == true) music_audio.play();
+    }
+})
+
+song_section.addEventListener("click",(event)=>{
+    song_section.stopPropagation;
+    if(event.target.matches("img")||event.target.matches("h1")||event.target.matches("p"))
+    {
+        paste_song(canciones[Number.parseInt(event.target.parentElement.parentElement.id.slice(6, event.target.parentElement.parentElement.id.length - 1).join)]);
         if(playing_is == true) music_audio.play();
     }
 })
