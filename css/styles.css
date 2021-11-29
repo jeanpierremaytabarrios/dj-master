@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher&family=Red+Rose:wght@300;400&display=swap');
+
+body{margin: 0px;padding: 0px;width: 100vw;height: 100vh;}
+.general
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-image: radial-gradient(35em,#000000,#032D0A);
+}
+/*Nav del titulo*/
+#nav-inicial
+{
+    width: 100%;
+    height: 6em;
+    background-color: skyblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#nav-inicial img{width: 4em;height: 4em;}
+#nav-inicial span{font-family: Red Rose;font-size: 1.5em;}
+
+/*Dj box*/
+.dj-box
+{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Song console izquierda*/
+.song-console
+{
+    width: 25%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.cons-image
+{
+    width: 75%;
+    height: 50%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2em 2em transparent;
+    overflow: hidden;
+
+    animation-name: luces;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+}
+#disc-left
+{
+    width: 100%;
+    height: 100%;
+
+    animation-name: rotar;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.cons-data
+{
+    margin-top: 3em;
+    margin-bottom: 1em;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#data-title, #data-artist{margin: 3px;color: white;font-family: Philosopher, sans-serif;}
+
+.cons-duration-bar
+{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.cons-duration-bar p{color: white; font-family: Philosopher, sans-serif;}
+#song-duration{width: 80%;color: white;}
+
+.song-final
+{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.song-vol
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.song-controls
+{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.console-btn{width: 3em; height: 3em;border-radius: 50%;background-color: white;transition-duration: 0.3s;overflow: hidden;cursor: pointer;}
+.console-btn img{width: 100%;height: 100%;}
+
+/*Song section derecha*/
+.song-section{width: 40%;height: 100%;background-color: rgba(5,92,21,0.35);}
+#call-search{width: 35em;height: 3em;border-radius: 3em;border: solid 4px;}
+
+.list-search{width: 100%;height: 15%;display: flex;flex-direction: row;justify-content: center;align-items: center;}
+.song-list{width: 100%;height: 85%;overflow-y: scroll;}
+
+#call-search:focus{border-color: red;}
+
+
+.list-item
+{
+    width: 100%;
+    height: 7em;
+    background-color: #c4c4c4;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.item-logo{width: 20%;height: 100%;}
+.item-logo img{width: 100%;height: 100%;}
+.item-data{width: 80%;height: 100%;display: flex;flex-direction: column;justify-content: center;}
+.item-title{font-family: Philosopher, Arial; color: red;font-size: larger;}
+.item-artist{font-size: small;color: red;font-family: Philosopher, Arial;}
+
+.item-artist, .item-title{margin: 0px;}
+
+@keyframes luces{
+    0%{box-shadow: 0px 0px 2em 2em white;}
+    5%{box-shadow: 0px 0px 2em 2em transparent;}
+    10%{box-shadow: 0px 0px 2em 2em yellow;}
+    15%{box-shadow: 0px 0px 2em 2em transparent;}
+    20%{box-shadow: 0px 0px 2em 2em orange;}
+    25%{box-shadow: 0px 0px 2em 2em transparent;}
+    30%{box-shadow: 0px 0px 2em 2em red;}
+    35%{box-shadow: 0px 0px 2em 2em transparent;}
+    40%{box-shadow: 0px 0px 2em 2em magenta;}
+    45%{box-shadow: 0px 0px 2em 2em transparent;}
+    50%{box-shadow: 0px 0px 2em 2em purple;}
+    55%{box-shadow: 0px 0px 2em 2em transparent;}
+    60%{box-shadow: 0px 0px 2em 2em blue;}
+    65%{box-shadow: 0px 0px 2em 2em transparent;}
+    70%{box-shadow: 0px 0px 2em 2em turquoise;}
+    75%{box-shadow: 0px 0px 2em 2em transparent;}
+    80%{box-shadow: 0px 0px 2em 2em greenyellow;}
+    85%{box-shadow: 0px 0px 2em 2em transparent;}
+    90%{box-shadow: 0px 0px 2em 2em peru;}
+    95%{box-shadow: 0px 0px 2em 2em transparent;}
+    100%{box-shadow: 0px 0px 2em 2em white;}
+}
+
+@keyframes rotar{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
