@@ -63,7 +63,7 @@ window.addEventListener("load",()=>{
     },1);
     window.setInterval(() => {
         song_duration.value = music_audio.currentTime;
-    },0.005);
+    },0.0005);
     window.setInterval(()=>{
         instant_repr.innerHTML = `${Math.floor(Math.ceil(music_audio.currentTime)/60)}:${Math.ceil(music_audio.currentTime)%60} 
         / ${Math.floor(Math.ceil(music_audio.duration)/60)}:${Math.ceil(music_audio.duration)%60}`;
@@ -116,6 +116,14 @@ prev_btn.addEventListener("click",()=>{
 
 compact_list(canciones);
 
+music_audio.addEventListener("ended",()=>{
+    if(aux < canciones.length - 1)
+    {
+        aux++;
+        paste_song(canciones[aux]);
+        if(playing_is == true) music_audio.play();
+    }
+})
 
 call_search.addEventListener("keyup",()=>{
     let g = document.querySelectorAll(".list-item");
