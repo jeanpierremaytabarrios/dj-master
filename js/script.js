@@ -34,8 +34,8 @@ let canciones = [
     }
 ];//order, title, artist, image, audio
 
-const compact_list = () => {
-    canciones.forEach((e)=>{
+const compact_list = (array) => {
+    array.forEach((e)=>{
         song_list.insertAdjacentHTML("beforeend",
         `<div id="item-${e.order}" class="list-item">
             <div class="item-logo"><img src="img/portadas/${e.image}"></div>
@@ -46,7 +46,6 @@ const compact_list = () => {
         </div>`);
     });
 };
-compact_list();
 
 const paste_song = (a) => {
     disc.src = `img/portadas/${a.image}`;
@@ -113,13 +112,18 @@ prev_btn.addEventListener("click",()=>{
         paste_song(canciones[aux]);
         if(playing_is == true) music_audio.play();
     }
-})
+});
 
-song_section.addEventListener("click",(event)=>{
-    song_section.stopPropagation;
-    if(event.target.matches("img")||event.target.matches("h1")||event.target.matches("p"))
+compact_list(canciones);
+
+
+call_search.addEventListener("keyup",()=>{
+    let g = document.querySelectorAll(".list-item");
+    g.forEach((e)=>{e.remove()});
+    let result = canciones.filter((e) => e.title.toLowerCase().includes(call_search.value.toLowerCase()) == true);
+    console.log("Se ha presionado una tecla");
+    if(result)
     {
-        paste_song(canciones[Number.parseInt(event.target.parentElement.parentElement.id.slice(6, event.target.parentElement.parentElement.id.length - 1).join)]);
-        if(playing_is == true) music_audio.play();
+        compact_list(result);
     }
-})
+});
